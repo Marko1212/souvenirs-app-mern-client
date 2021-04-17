@@ -1,2 +1,2 @@
-# mern-app-client
+# souvenirs-app-mern-client
 
