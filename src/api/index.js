@@ -3,7 +3,7 @@ import axios from 'axios';
 
 // const url = "http://localhost:5000/posts";
 
-const url = 'https://souvenirs-projet.herokuapp.com/posts';
+const url = 'https://souvenirs-app-mern.herokuapp.com/posts';
 
 export const fetchPosts = () => axios.get(url);
 
