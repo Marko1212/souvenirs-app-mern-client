@@ -27,7 +27,7 @@ const Auth = () => {
         setShowPassword(false);
     };
 
-    const googleSuccess = (res) => {
+    const googleSuccess = async (res) => {
         console.log(res);
 
     };
