@@ -6,11 +6,10 @@ import Input from './Input';
 
 const Auth = () => {
     const classes = useStyles();
-    const {showPassword, setShowPassword} = useState(false); 
+    const [showPassword, setShowPassword] = useState(false); 
+    const [isSignup, setIsSignup] = useState(false);
 
-    const isSignup = false;
-
-    const handleShowPassword = () => setShowPassword((prevShowPassword) => !prevShowPassword);
+    const handleShowPassword = () => setShowPassword(prevShowPassword => !prevShowPassword);
 
     const handleSubmit = () => {
 
@@ -18,12 +17,12 @@ const Auth = () => {
 
     const handleChange = () => {
 
-    }
+    };
 
     const switchMode = () => {
-
-    }
-
+        setIsSignup((prevIsSignup) => !prevIsSignup);
+        setShowPassword(false);
+    };
 
     return (
         <Container component="main" maxWidth="xs">
