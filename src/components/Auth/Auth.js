@@ -23,6 +23,7 @@ const Auth = () => {
     const handleShowPassword = () => setShowPassword(prevShowPassword => !prevShowPassword);
 
     const handleSubmit = (e) => {
+        
         e.preventDefault();
            
         if (isSignup) {
@@ -34,7 +35,6 @@ const Auth = () => {
 
     const handleChange = (e) => {
         setFormData({...formData, [e.target.name]: e.target.value});
-
     };
 
     const switchMode = () => {
@@ -75,14 +75,9 @@ const Auth = () => {
                                     <Input name="lastName" label="Last Name" handleChange={handleChange} half />
                                 </>
                             )
-
-
-
-
                         }
                         <Input name="email" label="Email Address" handleChange={handleChange} type="email" />
                         <Input name="password" label="Pasword" handleChange={handleChange} type={showPassword ? "text" : "password"} handleShowPassword={handleShowPassword} />
-
                         {isSignup && <Input name="confirmPassword" label="Repeat Password" handleChange={handleChange} type="password" />}
                     </Grid>
                     <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>
