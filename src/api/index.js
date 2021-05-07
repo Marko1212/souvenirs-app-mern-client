@@ -1,21 +1,22 @@
 import axios from 'axios';
 
+const API = axios.create({baseURL: "http://localhost:5000"});
 
-const url = "http://localhost:5000/posts";
+// const API = axios.create({baseURL: "https://souvenirs-app-mern.herokuapp.com"});
 
-//const url = 'https://souvenirs-app-mern.herokuapp.com/posts';
 
-export const fetchPosts = () => axios.get(url);
+export const fetchPosts = () => API.get('/posts');
 
-export const getNumberOfPosts = () => axios.get(`${url}/countPosts`);
+export const getNumberOfPosts = () => API.get(`/posts/countPosts`);
 
-export const createPost = (newPost) => axios.post(url, newPost);
+export const createPost = (newPost) => API.post('/posts', newPost);
 
-export const updatePost = (id, updatedPost) => axios.patch(`${url}/${id}`, updatedPost);
+export const updatePost = (id, updatedPost) => API.patch(`/posts/${id}`, updatedPost);
 
-export const deletePost = (id) => axios.delete(`${url}/${id}`);
+export const deletePost = (id) => API.delete(`/posts/${id}`);
 
-export const likePost = (id) => axios.patch(`${url}/${id}/likePost`);
+export const likePost = (id) => API.patch(`/posts/${id}/likePost`);
+
 
 
 
