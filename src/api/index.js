@@ -14,7 +14,7 @@ return req;
 
 export const fetchPosts = () => API.get('/posts');
 
-export const getNumberOfPosts = () => API.get(`/posts/countPosts`);
+export const getNumberOfPosts = async () => { const response = await API.get(`/posts/countPosts`); return response.data;}
 
 export const createPost = (newPost) => API.post('/posts', newPost);
 

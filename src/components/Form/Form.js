@@ -8,7 +8,7 @@ import { createPost, updatePost } from '../../actions/posts';
 
 const Form = ({ currentId, setCurrentId }) => {
 
-   const inputRef = useRef(null);
+   const inputRef = useRef();
 
     const [postData, setPostData] = useState({
         title: '', message: '', tags: '', selectedFile: ''
@@ -47,8 +47,6 @@ const Form = ({ currentId, setCurrentId }) => {
             </Paper>
         );
     }
-
-    //TODO : Clear the FILE input on clear or submit
     
     const clear = () => {
 
@@ -58,7 +56,9 @@ const Form = ({ currentId, setCurrentId }) => {
             title: '', message: '', tags: '', selectedFile: ''
         });
 
-        inputRef.current.value = '';
+        // inputRef.current.value = ''; SOLUTION WITH REF NOT WORKING HERE FOR CLEARING INPUT FILE FIELD AFTER UPLOAD OF FILE
+        // THE LINE BELOW SOLVES THE QUESTION!
+        document.querySelector("input[type='file']").value = '';
 
     };
 
